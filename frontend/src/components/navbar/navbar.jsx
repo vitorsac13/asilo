@@ -3,7 +3,6 @@ import { LuUserRound, LuMenu, LuHouse  } from "react-icons/lu"
 import { Drawer } from '@mui/material'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from "../../react.svg"
 
 export default function Navbar() {
     const [openMenu, setOpenMenu] = useState(false)
@@ -13,7 +12,7 @@ export default function Navbar() {
             {/* DESKTOP */}
             <div className={styles.navbarItems}>
                 <div className={styles.navbarLeft}>
-                    <Link to="/"><img src={logo} alt="Logo" className={styles.logo}/></Link>
+                    
                 </div>
 
                 <div className={styles.navbarRight}>
