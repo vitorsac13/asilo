@@ -5,8 +5,6 @@ import { Mongo } from './src/database/mongo.js'
 import { config } from 'dotenv'
 import authRouter from './src/auth/auth.js'
 import usersRouter from './src/routes/users.js'
-import productsRouter from './src/routes/products.js'
-import ordersRouter from './src/routes/orders.js'
 
 config()
 
@@ -33,8 +31,6 @@ async function main () {
 
     app.use('/auth', authRouter)
     app.use('/users', usersRouter)
-    app.use('/products', productsRouter)
-    app.use('/orders', ordersRouter)
 
     app.listen(port, () => {
         console.log(`Server running on http://${hostname}:${port}`)
