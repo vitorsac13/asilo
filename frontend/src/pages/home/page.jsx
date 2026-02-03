@@ -24,7 +24,7 @@ export default function Home() {
 
       {/* SAÚDE E BEM-ESTAR */}
       <section className={styles.section}>
-        <h2>Saúde & Bem-Estar</h2>
+        <h2>Saúde</h2>
 
         <div className={styles.cards}>
           <div className={styles.card}>
@@ -46,6 +46,36 @@ export default function Home() {
           <div className={styles.card}>
             <FaUserMd className={styles.icon} />
             <h3>Confiança Médica</h3>
+            <p>
+              Atendimento de saúde corporal e mental.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Bem-Estar</h2>
+
+        <div className={styles.cards}>
+          <div className={styles.card}>
+            <FaHeartbeat className={styles.icon} />
+            <h3>Alimentação</h3>
+            <p>
+              Soluções pensadas para melhorar o dia a dia.
+            </p>
+          </div>
+
+          <div className={styles.card}>
+            <FaLeaf className={styles.icon} />
+            <h3>Igreja</h3>
+            <p>
+              Cuidamos da saúde física e mental com responsabilidade.
+            </p>
+          </div>
+
+          <div className={styles.card}>
+            <FaUserMd className={styles.icon} />
+            <h3>Convivência</h3>
             <p>
               Atendimento de saúde corporal e mental.
             </p>
