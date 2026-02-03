@@ -27,7 +27,7 @@ async function main () {
         res.send({
             success: true,
             statuscode: 200,
-            body: 'Welcome to ECommerce!'
+            body: 'Welcome to Asilo!'
         })
     })
 
