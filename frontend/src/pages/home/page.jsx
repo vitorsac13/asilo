@@ -17,7 +17,7 @@ export default function Home() {
         <div className={styles.heroContent}>
           <h1>Asilo</h1>
           <p>
-            Cuidando da sua saúde dos idosos com qualidade e confiança.
+            Cuidando da saúde dos idosos com qualidade e confiança.
           </p>
         </div>
       </section>
@@ -31,7 +31,7 @@ export default function Home() {
             <FaHeartbeat className={styles.icon} />
             <h3>Qualidade de Vida</h3>
             <p>
-              Soluções farmacêuticas pensadas para melhorar seu dia a dia.
+              Soluções pensadas para melhorar o dia a dia.
             </p>
           </div>
 
@@ -39,7 +39,7 @@ export default function Home() {
             <FaLeaf className={styles.icon} />
             <h3>Bem-Estar Integral</h3>
             <p>
-              Cuidamos da sua saúde física e mental com responsabilidade.
+              Cuidamos da saúde física e mental com responsabilidade.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ export default function Home() {
             <FaUserMd className={styles.icon} />
             <h3>Confiança Médica</h3>
             <p>
-              Produtos desenvolvidos seguindo rigorosos padrões científicos.
+              Atendimento de saúde corporal e mental.
             </p>
           </div>
         </div>
