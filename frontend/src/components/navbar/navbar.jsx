@@ -3,7 +3,7 @@ import { LuUserRound, LuMenu, LuHouse  } from "react-icons/lu"
 import { Drawer } from '@mui/material'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaEnvelope, FaHeartbeat, FaInfoCircle } from 'react-icons/fa'
+import { FaEnvelope, FaHeartbeat, FaInfoCircle, FaNewspaper } from 'react-icons/fa'
 
 export default function Navbar() {
     const [openMenu, setOpenMenu] = useState(false)
@@ -18,9 +18,10 @@ export default function Navbar() {
 
                 <div className={styles.navbarRight}>
                     <Link to="/"><LuHouse className={styles.navbarIcon} /></Link>
-                    <Link to="/contact"><FaEnvelope className={styles.navbarIcon} /></Link>
+                    <Link to="/posts"><FaNewspaper className={styles.navbarIcon} /></Link>
                     <Link to="/health"><FaHeartbeat className={styles.navbarIcon} /></Link>
                     <Link to="/about"><FaInfoCircle className={styles.navbarIcon} /></Link>
+                    <Link to="/contact"><FaEnvelope className={styles.navbarIcon} /></Link>
                     <Link to="/profile"><LuUserRound className={styles.navbarIcon} /></Link>
                 </div>
             </div>

@@ -6,7 +6,6 @@ import { toast } from 'react-toastify'
 export default function Posts() {
     const [posts, setPosts] = useState([])
     const [loading, setLoading] = useState(true)
-    const [search, setSearch] = useState('')
     const API_URL = "http://localhost:3000/posts"
     
     useEffect(() => {
@@ -30,7 +29,7 @@ export default function Posts() {
 
             <div className={styles.postsGrid}>
                 {filteredProducts.length === 0 && (
-                    <p>Nenhum produto encontrado.</p>
+                    <p>Nenhum post encontrado.</p>
                 )}
 
                 {filteredProducts.map(post => (
