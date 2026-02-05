@@ -7,18 +7,18 @@ export default function Post() {
       "JavaScript é uma das linguagens mais populares do mundo e essencial para desenvolvimento web moderno.",
     data: "04 de Fevereiro de 2026",
     imagem:
-      "https://images.unsplash.com/photo-1527430253228-e93688616381"
+      "https://images.unsplash.com/photo-1627398242454-45a1465c2479"
   }
 
   return (
-    <div className="post-container">
-      <div className="post-card">
-        <img src={post.imagem} alt={post.titulo} className="post-image" />
+    <div className={styles.postContainer}>
+      <div className={styles.postCard}>
+        <img src={post.imagem} alt={post.titulo} className={styles.postImage} />
 
-        <div className="post-content">
-          <span className="post-date">{post.data}</span>
-          <h1 className="post-title">{post.titulo}</h1>
-          <p className="post-description">{post.descricao}</p>
+        <div className={styles.postContent}>
+          <span className={styles.postDate}>{post.data}</span>
+          <h1 className={styles.postTitle}>{post.titulo}</h1>
+          <p className={styles.postDescription}>{post.descricao}</p>
         </div>
       </div>
     </div>
