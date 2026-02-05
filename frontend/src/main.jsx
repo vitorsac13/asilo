@@ -11,6 +11,7 @@ import About from './pages/about/page.jsx'
 import Contact from './pages/contact/page.jsx'
 import Health from './pages/health/page.jsx'
 import Admin from './pages/admin/page.jsx'
+import Post from './pages/post/page.jsx'
 
 const pages = createBrowserRouter([
 	{
@@ -24,6 +25,7 @@ const pages = createBrowserRouter([
 			{ path: '/contact', element: <Contact /> },
 			{ path: '/health', element: <Health /> },
 			{ path: '/admin', element: <Admin /> },
+			{ path: '/post', element: <Post /> },
 		]
 	}
 ])
