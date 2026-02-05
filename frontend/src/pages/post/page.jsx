@@ -1,12 +1,23 @@
 import styles from './page.module.css'
 
 export default function Post() {
-  const post = {
-    name: "Como aprender JavaScript do zero",
-    description: "JavaScript é uma das linguagens mais populares do mundo e essencial para desenvolvimento web moderno.",
-    date: "04 de Fevereiro de 2026",
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479"
-  }
+    const { id } = useParams()
+    const navigate = useNavigate()
+
+    const [product, setProduct] = useState(null)
+    const [loading, setLoading] = useState(true)
+
+	useEffect(() => {
+        fetch(`http://localhost:3000/posts/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    setProduct(data.body)
+                }
+            })
+            .catch(err => console.error(err))
+            .finally(() => setLoading(false))
+    }, [id])
 
   return (
     <div className={styles.postContainer}>
