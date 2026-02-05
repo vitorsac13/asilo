@@ -3,8 +3,7 @@ import styles from './page.module.css'
 export default function Post() {
   const post = {
     name: "Como aprender JavaScript do zero",
-    description:
-      "JavaScript é uma das linguagens mais populares do mundo e essencial para desenvolvimento web moderno.",
+    description: "JavaScript é uma das linguagens mais populares do mundo e essencial para desenvolvimento web moderno.",
     date: "04 de Fevereiro de 2026",
     image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479"
   }
