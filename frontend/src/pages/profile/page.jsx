@@ -44,7 +44,7 @@ export default function Profile() {
                             className={`${styles.btn} ${styles.adminBtn}`}
                             onClick={handleEdit}
                         >
-                            Editar Produtos
+                            Editar Posts
                         </button>
                     )}
                     <button className={styles.btn} onClick={handleLogout}>
