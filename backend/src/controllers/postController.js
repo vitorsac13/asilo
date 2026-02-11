@@ -17,6 +17,15 @@ export default class PostController {
         }
     }
 
+    async createPost(postData){
+        try{
+        const result = await dao.createPost(postData)
+        return ok(result)
+        } catch (error) {
+            return serverError(error)
+        }
+    }
+
     async deletePost(postId){
         try {
             const result = await this.dao.deletePost(postId)
