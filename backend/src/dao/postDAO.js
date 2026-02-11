@@ -1,41 +1,65 @@
 import { Mongo } from "../database/mongo.js"
-import { ObjectId } from 'mongodb'
-import crypto from 'crypto'
+import { ObjectId } from "mongodb"
 
-const collectionName = 'posts'
+const collectionName = "post"
 
-export default class PostDAO {
+export default class MedicoDAO {
 
-    async getPosts(){
-        const result = await Mongo.db.collection(collectionName).find({}).toArray()
+  async getPosts() {
+    const result = await Mongo.db
+      .collection(collectionName)
+      .find({})
+      .toArray()
 
-        return result
+    return result
+  }
+
+  async createPost(postData) {
+
+    // Gera ID público (opcional)
+    const post = {
+      _id: new ObjectId(),
+      title: postData.title,
+      subtitle: postData.subtitle,
+      content: postData.content,
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
 
-    async deletePost(userId){
-        const result = await Mongo.db.collection(collectionName).findOneAndDelete({ _id: new ObjectId(userId) })
-        return result
+    const result = await Mongo.db
+      .collection(collectionName)
+      .insertOne(post)
+
+    return {
+      acknowledged: result.acknowledged,
+      insertedId: result.insertedId,
+      post
+    }
+  }
+
+  async updatePost(postId, postData) {
+
+    const updateData = {
+      ...postData,
+      updatedAt: new Date()
     }
 
-    async updatePost(userId, userData){
-        if (userData.password) {
-            const salt = crypto.randomBytes(16)
-            crypto.pbkdf2(userData.password, salt, 310000, 16, 'sha256', async (err, hashedPassword) => {
-                if(err) {
-                    throw new Error('Error during hashing password!')
-                }
-                userData = { ...userData, password: hashedPassword, salt }
+    const result = await Mongo.db
+      .collection(collectionName)
+      .findOneAndUpdate(
+        { _id: new ObjectId(postId) },
+        { $set: updateData },
+        { returnDocument: "after" } // retorna documento atualizado
+      )
 
-                const result = await Mongo.db.collection(collectionName).findOneAndUpdate( { _id: new ObjectId(userId) }, { $set: userData } )
+    return result
+  }
 
-                return result
-            })
-        } else {
-            const result = await Mongo.db.collection(collectionName).findOneAndUpdate( { _id: new ObjectId(userId) }, { $set: userData } )
-            return result 
-        }
+  async deletePost(postId) {
+    const result = await Mongo.db
+      .collection(collectionName)
+      .findOneAndDelete({ _id: new ObjectId(postId) })
 
-        
-    }
-
+    return result
+  }
 }
