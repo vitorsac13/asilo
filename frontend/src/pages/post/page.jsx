@@ -4,7 +4,7 @@ export default function Post() {
     const { id } = useParams()
     const navigate = useNavigate()
 
-    const [product, setProduct] = useState(null)
+    const [product, setPost] = useState(null)
     const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
@@ -12,7 +12,7 @@ export default function Post() {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    setProduct(data.body)
+                    setPost(data.body)
                 }
             })
             .catch(err => console.error(err))
