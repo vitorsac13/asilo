@@ -27,7 +27,7 @@ export default function Admin() {
         }
     }, [authData, navigate])
 
-    // Buscar produtos
+    
     useEffect(() => {
         fetch(API_URL)
             .then(res => res.json())
@@ -87,7 +87,7 @@ export default function Admin() {
     }
 
     const handleDelete = async (id) => {
-        if (!window.confirm("Deseja remover este produto?")) return
+        if (!window.confirm("Deseja remover este post?")) return
 
         await fetch(`${API_URL}/${id}`, {
             method: "DELETE",
@@ -100,12 +100,12 @@ export default function Admin() {
     }
 
     if (loading) {
-        return <h2 className={styles.loading}>Carregando produtos...</h2>
+        return <h2 className={styles.loading}>Carregando posts...</h2>
     }
 
     return (
         <div className={styles.container}>
-            <h1>Edição de Produtos</h1>
+            <h1>Edição de Posts</h1>
 
             {/* FORM */}
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -146,7 +146,7 @@ export default function Admin() {
                 />
 
                 <button type="submit">
-                    {editingId ? "Atualizar Produto" : "Adicionar Produto"}
+                    {editingId ? "Atualizar Post" : "Adicionar Post"}
                 </button>
             </form>
 
