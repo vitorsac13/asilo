@@ -1,8 +1,6 @@
 import styles from './page.module.css'
 import { useEffect, useState, useMemo } from "react"
 import { useNavigate } from "react-router-dom"
-import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
 export default function Admin() {
     const navigate = useNavigate()
