@@ -12,6 +12,7 @@ import Contact from './pages/contact/page.jsx'
 import Health from './pages/health/page.jsx'
 import Admin from './pages/admin/page.jsx'
 import Post from './pages/post/page.jsx'
+import Dashboard from './pages/dashboard/page.jsx'
 
 const pages = createBrowserRouter([
 	{
@@ -26,6 +27,7 @@ const pages = createBrowserRouter([
 			{ path: '/health', element: <Health /> },
 			{ path: '/admin', element: <Admin /> },
 			{ path: '/post', element: <Post /> },
+			{ path: '/dashboard', element: <Dashboard /> },
 		]
 	}
 ])
