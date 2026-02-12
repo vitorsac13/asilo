@@ -23,6 +23,10 @@ export default function Profile() {
         navigate("/admin")
     }
 
+    const handleDashboard = () => {
+        navigate("/dashboard")
+    }
+
     return (
         <div className={styles.profileContainer}>
             <div className={styles.profileCard}>
@@ -40,10 +44,12 @@ export default function Profile() {
 
                 <div className={styles.profileAction}>
                     {authData?.user?.role === 'admin' && (
-                        <button
-                            className={`${styles.btn} ${styles.adminBtn}`}
-                            onClick={handleEdit}
-                        >
+                        <button className={`${styles.btn} ${styles.adminBtn}`} onClick={handleDashboard}>
+                            Dashboard
+                        </button>
+                    )}
+                    {authData?.user?.role === 'admin' && (
+                        <button className={`${styles.btn} ${styles.adminBtn}`} onClick={handleEdit}>
                             Editar Posts
                         </button>
                     )}
