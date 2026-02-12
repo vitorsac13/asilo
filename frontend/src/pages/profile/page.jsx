@@ -47,7 +47,7 @@ export default function Profile() {
                             Editar Posts
                         </button>
                     )}
-                    <button className={styles.btn} onClick={handleLogout}>
+                    <button className={`${styles.btn} ${styles.btnDanger}`} onClick={handleLogout}>
                         Logout
                     </button>
                 </div>
