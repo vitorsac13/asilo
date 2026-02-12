@@ -6,9 +6,6 @@ export default function Dashboard() {
 
     const [posts] = useState([])
 
-    const [currentDate, setCurrentDate] = useState(new Date())
-    const [selectedDate, setSelectedDate] = useState(null)
-
     useEffect(() => {
       if (!auth || auth.user.role !== "admin") {
         navigate("/profile")
