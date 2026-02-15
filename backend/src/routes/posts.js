@@ -1,7 +1,7 @@
 import express from "express"
 import PostController from "../controllers/postController.js"
-import authMiddleware from "../middlewares/authMiddleware.js"
-import adminMiddleware from "../middlewares/adminMiddleware.js"
+import authMiddleware from "../helpers/authMiddleware.js"
+import adminMiddleware from "../helpers/adminMiddleware.js"
 
 const postsRouter = express.Router()
 const postController = new PostController()
